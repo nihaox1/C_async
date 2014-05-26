@@ -1379,6 +1379,7 @@ _cAsync.fn.extend({
 					return _config.__order ? this.order() : (function(){
 						var _url;
 						_config.__count = args.url.length;
+						if( !_config.__count ){ return _tool.callback(); };
 						for(var i = 0 , len = args.url.length; i < len; i++){
 							_url = args.url[ i ];
 							if( !tool.data.check_url_is_exsit( _url ) ){

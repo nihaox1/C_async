@@ -1,21 +1,36 @@
 img{
 	border 		: 0px;
 };
+
 a , a:hover { 
 	text-decoration: none; 
 };
+
+li{
+	list-style 		: none;
+};
+
+:root{
+	background 		: #eee; 
+};
+
 body{
 	& > header{
 		$h 				: 45px;
 		width 			: 100%;
 		height 			: $h;  
 		background 		: #3276b1; 
-		padding 		: 0px 5%;
+		padding 		: 0px 10%;
 		.logo{
 			height 		: $h;
 			line-height : $h;  
 			font-size 	: 25px; 
 			color 		: #fff;
+			float 		: left; 
+		};
+		.git{
+			margin-top 	: 5px; 
+			float 		: right; 
 		};
 	};
 

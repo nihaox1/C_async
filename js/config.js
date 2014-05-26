@@ -8,6 +8,9 @@
 			doc 	: "js/doc.js",
 			log 	: "js/log.js",
 			FQA 	: "js/FQA.js"
+		} ),
+		config 		: $c.page( {
+			db 		: "core/dbStr.js"
 		} )
 	};
 	$( "article" ).height( $( document ).height() - 45 );

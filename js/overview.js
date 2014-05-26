@@ -48,7 +48,8 @@ $c.define( {
 					$modal.find( "li" ).click( function(){
 						tool.event.tab( $( this ).attr( "func" ) );
 					} );
-					tool.event.tab( "home" );
+					// tool.event.tab( "home" );
+					tool.event.tab( "doc" );
 				}
 			},
 			ui : {
@@ -58,7 +59,6 @@ $c.define( {
 						for( var i = 0 , len = data.length; i < len; i++ ){
 							_lis.push( $c.tool.JIT( data[ i ] , html.cell ) );
 						};
-						E( _lis );
 						config.modal.list.html( _lis.join( "" ) );
 						tool.event.tabInit( config.modal.list );
 					} );

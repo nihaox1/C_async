@@ -127,17 +127,17 @@ $c.extend({
 			 */
 			require : function( page , func ){
 				$c.alert.set();
+				/*!
+				 *	解决 其它模块在请求初期 constructor 与 display 中的回调事件 事件调用顺序错位
+				 *	@__func 	: func 建立 page与define的  事件关联
+				 */
+				page.__func = func;
 				$c.modal.require( {
 					url 	: page.__config.url,
 					callback: function(){
 						$c.alert.unset();
 						page.__config.init = true;
 						page.__config.loading = false;
-						/*!
-						 *	解决 其它模块在请求初期 constructor 与 display 中的回调事件 事件调用顺序错位
-						 *	@__func 	: func 建立 page与define的  事件关联
-						 */
-						page.__func = func;
 					}
 				} );
 			},
@@ -275,7 +275,8 @@ $c.extend({
 				};
 			},
 			require : function( args ){
-				args.url = args.url instanceof Array ? args.url : [ args.url ];
+				args.url = args.url instanceof Array ? args.url : 
+								typeof args.url === "string" ? [ args.url ] : [];
 				$c.alert.set();
 				var _self 		= this,
 					_require 	= {
