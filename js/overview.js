@@ -49,10 +49,20 @@ $c.define( {
 						tool.event.tab( $( this ).attr( "func" ) );
 					} );
 					// tool.event.tab( "home" );
-					tool.event.tab( "doc" );
+					tool.event.tab( "log" );
 				}
 			},
 			ui : {
+				docMenu : function( list ){
+					E( list );
+					var _lis = [ "<ul class='docMenu'>" ];
+					for( var i = list.length; i--; ){
+						_lis.push( $c.tool.JIT( list[ i ] , html.docMenuCell ) );
+					};
+					_lis.push( "</ul>" );
+					config.modal.docMenu = config.modal.docMenu || config.container.find( "[func='doc']" );
+					config.modal.docMenu.append( _lis.join( "" ) );
+				},
 				list : function(){
 					tool.data.list( function( data ){
 						var _lis = [];
@@ -65,7 +75,8 @@ $c.define( {
 				},
 				setModal : function(){
 					config.modal = {
-						list 		: config.container.find( "[func='list']" )
+						list 		: config.container.find( "[func='list']" ),
+						docMenu 	: 0
 					};
 				}
 			},
@@ -76,7 +87,8 @@ $c.define( {
 				};
 				html = {
 					container 	: $( "#overview_container_template" ).html(),
-					cell 		: $( "#overview_list_cell_template" ).html()
+					cell 		: $( "#overview_list_cell_template" ).html(),
+					docMenuCell : $( "#overview_doc_menu_list_cell_template" ).html()
 				};
 				config.container.html( html.container );
 				tool.ui.setModal();
@@ -89,7 +101,14 @@ $c.define( {
 			/*!
 			 *	@name 		: 待切换的tab名
 			 */
-			tab 	: function( name ){}
+			tab 	: function( name ){
+				tool.event.tab( name );
+				return this;
+			},
+			docMenu	: function( list ){
+				if( !( list instanceof Array ) ){ return false; };
+				tool.ui.docMenu( list );
+			}
 		};
 	}
 } );

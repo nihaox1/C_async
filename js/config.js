@@ -10,7 +10,8 @@
 			FQA 	: "js/FQA.js"
 		} ),
 		config 		: $c.page( {
-			db 		: "core/dbStr.js"
+			db 		: "core/dbStr.js",
+			log 	: "core/logStr.js"
 		} )
 	};
 	$( "article" ).height( $( document ).height() - 45 );
