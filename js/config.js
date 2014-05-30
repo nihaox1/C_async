@@ -12,7 +12,8 @@
 		} ),
 		config 		: $c.page( {
 			db 		: "core/dbStr.js",
-			log 	: "core/logStr.js"
+			log 	: "core/logStr.js",
+			FQA  	: "core/FQAStr.js"
 		} )
 	};
 	$( "article" ).height( $( document ).height() - 45 );

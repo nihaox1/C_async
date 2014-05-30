@@ -16,9 +16,9 @@ $c.define( {
 					var data = [
 							{ require : "home" 		, title : "首页" },
 							{ require : "doc" 		, title : "文档手册" },
-							{ require : "log" 		, title : "日志" }
+							{ require : "log" 		, title : "日志" },
 							// { require : "download" 	, title : "定制下载" },
-							// { require : "FQA" 		, title : "FQA" }
+							{ require : "FQA" 		, title : "FQA" }
 						];
 					if( func ){
 						func( data );
@@ -50,7 +50,7 @@ $c.define( {
 						tool.event.tab( $( this ).attr( "func" ) );
 					} );
 					// tool.event.tab( "home" );
-					tool.event.tab( "log" );
+					tool.event.tab( "FQA" );
 				}
 			},
 			ui : {
