@@ -7,7 +7,8 @@
 			home 	: "js/home.js",
 			doc 	: "js/doc.js",
 			log 	: "js/log.js",
-			FQA 	: "js/FQA.js"
+			FQA 	: "js/FQA.js",
+			download: "js/download.js"
 		} ),
 		config 		: $c.page( {
 			db 		: "core/dbStr.js",

@@ -14,10 +14,11 @@ $c.define( {
 				 */
 				list : function( func ){
 					var data = [
-							{ require : "home" 	, title : "首页" },
-							{ require : "doc" 	, title : "文档手册" },
-							{ require : "log" 	, title : "日志" },
-							{ require : "FQA" 	, title : "FQA" }
+							{ require : "home" 		, title : "首页" },
+							{ require : "doc" 		, title : "文档手册" },
+							{ require : "log" 		, title : "日志" }
+							// { require : "download" 	, title : "定制下载" },
+							// { require : "FQA" 		, title : "FQA" }
 						];
 					if( func ){
 						func( data );
