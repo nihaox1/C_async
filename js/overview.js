@@ -49,8 +49,7 @@ $c.define( {
 					$modal.find( "li" ).click( function(){
 						tool.event.tab( $( this ).attr( "func" ) );
 					} );
-					// tool.event.tab( "home" );
-					tool.event.tab( "FQA" );
+					tool.event.tab( "home" );
 				}
 			},
 			ui : {
